@@ -1,0 +1,77 @@
+<!-- Fixed navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Notre Nav/bar -> </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown"> 
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Utilisation MYSQL : commandes 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown0">
+          <a class="dropdown-item" href="/valeurs2_create">Créer</a>
+          <a class="dropdown-item" href="/valeurs2_retrieveNom">Rechercher par nom</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/valeurs2_retrieveOrderByPrenomDesc">Trier par ordre décroissant sur les prénoms</a>
+          <a class="dropdown-item" href="/valeurs2_retrieveOrderByPrenom">Trier par ordre croissant sur les prénoms</a>
+          <a class="dropdown-item" href="/valeurs2_update">Modifier une ligne</a>
+          <a class="dropdown-item" href="/valeurs2_delete">Supprimer une ligne</a>
+          <a class="dropdown-item" href="/valeurs2_ShowAllLines">Afficher toutes les lignes</a>
+          <a class="dropdown-item" href="/valeurs2_recherche">Rechercher dans la table</a>
+          
+          <a class="dropdown-item" href="/">Vide</a>  
+          
+          
+        </div>
+      </li>
+
+      
+      
+ 
+      
+
+      
+      
+
+
+
+
+
+
+
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+{% for message in get_flashed_messages() %}
+  <div class="alert alert-warning">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      {{ message }}
+  </div>
+{% endfor %}
+
+    {% block page_content %}{% endblock %}
+</div>
+
