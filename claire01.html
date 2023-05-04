@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Tiny MCE Edit</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+<!--     
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
+  <script src="static/js/tinymce.min.js" type="text/javascript"></script>
+  </head>
+  <br>
+  <br>
+  <br>
+  <body>
+    <div class="container-fluid">
+    <div class="d-flex flex-row justify-content-around">
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Langage</option>
+        <option value="1">Javscript</option>
+        <option value="2">HTML</option>
+        <option value="3">Python</option>
+      </select>
+      &nbsp;
+      &nbsp;
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Dossier</option>
+        <option value="1">Alert</option>
+        <option value="2">Buttons</option>
+        <option value="3">Boucles</option>
+      </select>
+      &nbsp;
+      &nbsp;
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Sous dossier</option>
+        <option value="1">Alert.js</option>
+        <option value="2">Buttons.html</option>
+        <option value="3">Boucles.py</option>
+      </select>
+      
+    </div>     
+   </div>
+
+   <br>
+   <br>
+   <br>
+
+<button class="btn btn-light" id="copy">Copy</button>
+<div class="d-flex flex-row justify-content-center">
+  <!-- Tinymce -->
+ <div id="conteneur">
+  <div id="contenu" name="fichier">
+    <!-- je place mon contenu dans cette div cacher -->
+      <div id="copyContenu" name="copyContenu" hidden=true ></div>    
+      <textarea id="description" name="description" name="fichier"></textarea><br />
+      <!-- <input type="button" value="tester" onclick="ajouter()" /> -->
+    
+
+  </div>
+  <br>
+  <br>
+  
+</div> 
+
+</div>
+
+
+   <div class="d-flex flex-row justify-content-around">
+    <button class="btn btn-primary">Enregistrer/Save</button>
+    <button class="btn btn-primary">Supprimer/Delete</button>
+    <button class="btn btn-primary">Copier/Copy</button>
+     
+   </div>
+
+</body>
+
+
+
+
+
+
+<script type="text/javascript" language="javascript">
+  tinymce.init({selector:"textarea",plugins:'code', width:1300,height:370,menubar:false,statusbar:false,name:"contenu"
+  }
+    );
+
+ tinymce.name = "contenu"
+
+  function ajouter()
+  {
+    tinymce.triggerSave(true,true);
+    alert(document.getElementById("description").value)
+  }
+  
+
+</script>
+
+<script type="text/javascript" src="static/page2.js">
+  
+</script>
+
+
+</html>

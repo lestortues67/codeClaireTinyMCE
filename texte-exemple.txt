@@ -1,0 +1,5 @@
+Le tinymce offre toute une librairie de méthodes et propriétés JQuery pour donner vie à des éditeurs Wysiwyg (What You See Is What You Get). Il est très simple à initialiser. Il suffit de régler quelques attributs dans sa méthode init. C'est ainsi et par exemple que l'on peut définir facilement les boutons qui doivent composer la barre d'outils. Ils sont essentiellement dédiés à la mise en forme.
+
+Dès lors, l'enjeu consiste à pouvoir récupérer ce contenu avec ses balises Html, côté client comme côté serveur, soit en Javascript et en Php. Côté serveur, rien de plus simple, après soumission du formulaire, c'est l'instruction Php $_POST[id_du_textearea] qui se charge de récupérer la substance. Côté client, il faut d'abord entrevoir une sauvegarde de l'objet pour actualiser le contenu en mémoire et ainsi le piocher par le code Javascript.
+
+Voilà donc pour cette brève présentation.
