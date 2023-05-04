@@ -56,8 +56,9 @@
       <div id="copyContenu" name="copyContenu" hidden=true ></div>    
       <form method="post">
       <textarea id="description" name="description" name="fichier"></textarea><br />
-      <button class="btn btn-primary" type="submit" >Envoyer</button>
-    </form>
+      </form>
+      <button id="montrerContenu" class="btn btn-success">Montrer le contenu dans la console</button>
+      
 
 
 
@@ -86,6 +87,12 @@
 
 <script type="text/javascript" language="javascript">
 
+  function eventManager(p_event){
+    if (p_event.target.id=="montrerContenu"){
+      contenu()
+    }
+  }
+
   function ajouter()
   {
     tinymce.triggerSave(true,true);
@@ -97,6 +104,29 @@
     var content = ed.getContent()
     console.log(content)
   }
+
+  function estModifie(){
+    // Récupérer la référence de l'éditeur TinyMCE
+    var editeur = tinymce.get('description');
+    // Vérifier si l'éditeur a été modifié
+    if (editeur.isDirty()) {
+      return true
+    }
+    return false
+  }
+
+  function sauver(){
+    // Récupérer la référence de l'éditeur TinyMCE
+    var editeur = tinymce.get('description');
+
+    // Sauvegarder le contenu de l'éditeur
+    var s = editeur.save();
+
+    console.log("éditeur avec save : ",s)
+  }
+
+  var b = document.getElementById("montrerContenu")
+  b.addEventListener('click',eventManager,false)
   
 </script>
 
